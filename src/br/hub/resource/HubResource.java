@@ -15,6 +15,7 @@ import javax.ws.rs.PathParam;
 
 import br.hub.model.SubscribeBean;
 import javax.ws.rs.Consumes;
+import javax.ws.rs.GET;
 import javax.ws.rs.Produces;
 
 import org.push.java.processors.NotifySubscribes;
@@ -40,6 +41,12 @@ public class HubResource {
     private static final LinkedList<String> topics = new LinkedList<String>();
     
 
+    @GET
+     @Path("test")
+    public String getMessage(){
+        return "funcionando!";
+    }
+    
     @PUT
     @Path("publish/{idTopic}")
     public void publicar(@PathParam("idTopic") String idTopic, String valueTopic) {
