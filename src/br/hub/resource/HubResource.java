@@ -41,11 +41,7 @@ public class HubResource {
     private static final LinkedList<String> topics = new LinkedList<String>();
     
 
-    @GET
-     @Path("test")
-    public String getMessage(){
-        return "funcionando!";
-    }
+   
     
     @PUT
     @Path("publish/{idTopic}")
