@@ -1,1 +1,1 @@
-web: play run --http.port=$PORT $PLAY_OPTS
+web:java $JAVA_OPTS -jar target/dependency/webapp-runner.jar --port $PORT dist/HubFinal.war
