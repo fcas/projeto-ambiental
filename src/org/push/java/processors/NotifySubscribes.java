@@ -9,7 +9,6 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 import br.hub.model.SubscribeBean;
 
-
 public class NotifySubscribes {
 
     private Iterator<SubscribeBean> subscribes;
@@ -24,7 +23,7 @@ public class NotifySubscribes {
 
     public void notificar() {
 
- 
+
         while (subscribes.hasNext()) {
 
 
@@ -34,10 +33,10 @@ public class NotifySubscribes {
                 try {
                     Socket socket = new Socket(subscribe.getAddress(), subscribe.getPort());
                     ObjectOutputStream output = new ObjectOutputStream(socket.getOutputStream());
-                    
+
                     System.out.println("notificando " + subscribe.getAddress() + ":" + subscribe.getPort());
                     output.writeObject(notificacao);
-                    
+
                 } catch (UnknownHostException ex) {
                     Logger.getLogger(NotifySubscribes.class.getName()).log(Level.SEVERE, null, ex);
                 } catch (IOException ex) {

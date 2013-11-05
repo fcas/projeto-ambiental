@@ -40,6 +40,4 @@ public class SubscribeBean {
     public void setPort(int port) {
         this.port = port;
     }
-
-    
 }
