@@ -15,8 +15,6 @@ import javax.ws.rs.PathParam;
 
 import br.hub.model.SubscribeBean;
 import javax.ws.rs.Consumes;
-import javax.ws.rs.GET;
-import javax.ws.rs.Produces;
 
 import org.push.java.processors.NotifySubscribes;
 
