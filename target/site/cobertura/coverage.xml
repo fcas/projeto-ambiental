@@ -1,65 +1,15 @@
 <?xml version="1.0"?>
 <!DOCTYPE coverage SYSTEM "http://cobertura.sourceforge.net/xml/coverage-04.dtd">
 
-<coverage line-rate="0.0" branch-rate="0.0" lines-covered="0" lines-valid="73" branches-covered="0" branches-valid="20" complexity="0.0" version="1.9.4.1" timestamp="1385060189241">
+<coverage line-rate="0.0" branch-rate="0.0" lines-covered="0" lines-valid="65" branches-covered="0" branches-valid="20" complexity="2.0" version="1.9.4.1" timestamp="1385064425823">
 	<sources>
-		<source>/home/felipe/NetBeansProjects/ProjetoAmbientalHub</source>
 		<source>--source</source>
+		<source>/home/felipe/NetBeansProjects/ProjetoAmbientalHub/src</source>
 	</sources>
 	<packages>
-		<package name="" line-rate="0.0" branch-rate="1.0" complexity="0.0">
+		<package name="br.hub.model" line-rate="0.0" branch-rate="1.0" complexity="1.0">
 			<classes>
-				<class name="NewEmptyJUnitTest" filename="NewEmptyJUnitTest.java" line-rate="0.0" branch-rate="1.0" complexity="0.0">
-					<methods>
-						<method name="&lt;init&gt;" signature="()V" line-rate="0.0" branch-rate="1.0">
-							<lines>
-								<line number="19" hits="0" branch="false"/>
-								<line number="20" hits="0" branch="false"/>
-							</lines>
-						</method>
-						<method name="setUp" signature="()V" line-rate="0.0" branch-rate="1.0">
-							<lines>
-								<line number="32" hits="0" branch="false"/>
-							</lines>
-						</method>
-						<method name="setUpClass" signature="()V" line-rate="0.0" branch-rate="1.0">
-							<lines>
-								<line number="24" hits="0" branch="false"/>
-							</lines>
-						</method>
-						<method name="tearDown" signature="()V" line-rate="0.0" branch-rate="1.0">
-							<lines>
-								<line number="36" hits="0" branch="false"/>
-							</lines>
-						</method>
-						<method name="tearDownClass" signature="()V" line-rate="0.0" branch-rate="1.0">
-							<lines>
-								<line number="28" hits="0" branch="false"/>
-							</lines>
-						</method>
-						<method name="testSubscriber" signature="()V" line-rate="0.0" branch-rate="1.0">
-							<lines>
-								<line number="40" hits="0" branch="false"/>
-								<line number="41" hits="0" branch="false"/>
-							</lines>
-						</method>
-					</methods>
-					<lines>
-						<line number="19" hits="0" branch="false"/>
-						<line number="20" hits="0" branch="false"/>
-						<line number="24" hits="0" branch="false"/>
-						<line number="28" hits="0" branch="false"/>
-						<line number="32" hits="0" branch="false"/>
-						<line number="36" hits="0" branch="false"/>
-						<line number="40" hits="0" branch="false"/>
-						<line number="41" hits="0" branch="false"/>
-					</lines>
-				</class>
-			</classes>
-		</package>
-		<package name="br.hub.model" line-rate="0.0" branch-rate="1.0" complexity="0.0">
-			<classes>
-				<class name="br.hub.model.SubscribeBean" filename="br/hub/model/SubscribeBean.java" line-rate="0.0" branch-rate="1.0" complexity="0.0">
+				<class name="br.hub.model.SubscribeBean" filename="br/hub/model/SubscribeBean.java" line-rate="0.0" branch-rate="1.0" complexity="1.0">
 					<methods>
 						<method name="&lt;init&gt;" signature="()V" line-rate="0.0" branch-rate="1.0">
 							<lines>
@@ -115,9 +65,9 @@
 				</class>
 			</classes>
 		</package>
-		<package name="br.hub.resource" line-rate="0.0" branch-rate="0.0" complexity="0.0">
+		<package name="br.hub.resource" line-rate="0.0" branch-rate="0.0" complexity="2.8">
 			<classes>
-				<class name="br.hub.resource.HubResource" filename="br/hub/resource/HubResource.java" line-rate="0.0" branch-rate="0.0" complexity="0.0">
+				<class name="br.hub.resource.HubResource" filename="br/hub/resource/HubResource.java" line-rate="0.0" branch-rate="0.0" complexity="2.8">
 					<methods>
 						<method name="&lt;clinit&gt;" signature="()V" line-rate="0.0" branch-rate="1.0">
 							<lines>
@@ -273,9 +223,9 @@
 				</class>
 			</classes>
 		</package>
-		<package name="org.push.java.processors" line-rate="0.0" branch-rate="0.0" complexity="0.0">
+		<package name="org.push.java.processors" line-rate="0.0" branch-rate="0.0" complexity="3.0">
 			<classes>
-				<class name="org.push.java.processors.NotifySubscribes" filename="org/push/java/processors/NotifySubscribes.java" line-rate="0.0" branch-rate="0.0" complexity="0.0">
+				<class name="org.push.java.processors.NotifySubscribes" filename="org/push/java/processors/NotifySubscribes.java" line-rate="0.0" branch-rate="0.0" complexity="3.0">
 					<methods>
 						<method name="&lt;init&gt;" signature="(Ljava/util/Iterator;Ljava/lang/String;Ljava/lang/String;)V" line-rate="0.0" branch-rate="1.0">
 							<lines>
