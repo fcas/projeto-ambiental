@@ -1,3 +1,4 @@
 org/push/java/processors/NotifySubscribes.class
 br/hub/model/SubscribeBean.class
+NewEmptyJUnitTest.class
 br/hub/resource/HubResource.class
