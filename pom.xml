@@ -4,6 +4,13 @@
   <artifactId>ProjetoAmbientalHub</artifactId>
   <version>1</version>
 
+<properties>
+    <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+    <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
+    <maven.api.version>3.0.4</maven.api.version>
+    <lombok.version>1.12.2</lombok.version>
+ </properties>
+
 <dependencies>
 	<dependency>
 	    <groupId>javax</groupId>
