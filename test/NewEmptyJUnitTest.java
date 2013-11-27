@@ -52,6 +52,12 @@ public class NewEmptyJUnitTest {
         sb.setTopic("tópico");
         assertEquals("tópico", sb.getTopic());
         
+        
+        
+    }
+    
+    @Test
+    public void testResource(){
         h.publicar("chuva", "aqui");
         h.registrar("chuva");
         try {
@@ -60,7 +66,6 @@ public class NewEmptyJUnitTest {
             Logger.getLogger(NewEmptyJUnitTest.class.getName()).log(Level.SEVERE, null, ex);
         }
         h.unsubscribe(sb);
-        
     }
     // TODO add test methods here.
     // The methods must be annotated with annotation @Test. For example:
