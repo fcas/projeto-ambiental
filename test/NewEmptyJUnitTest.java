@@ -3,6 +3,7 @@
  * and open the template in the editor.
  */
 
+import br.hub.model.SubscribeBean;
 import org.junit.After;
 import org.junit.AfterClass;
 import org.junit.Before;
@@ -15,8 +16,9 @@ import static org.junit.Assert.*;
  * @author felipe
  */
 public class NewEmptyJUnitTest {
-    
+    SubscribeBean sb = new SubscribeBean();
     public NewEmptyJUnitTest() {
+        
     }
     
     @BeforeClass
@@ -37,7 +39,13 @@ public class NewEmptyJUnitTest {
     
     @Test
     public void testSubscriber(){
-        assertEquals("1", "1");
+        sb.setPort(11);
+        assertEquals(11, sb.getPort());
+        sb.setAddress("endereço");
+        
+        assertEquals("endereço", sb.getAddress());
+        sb.setTopic("tópico");
+        assertEquals("tópico", sb.getTopic());
     }
     // TODO add test methods here.
     // The methods must be annotated with annotation @Test. For example:
