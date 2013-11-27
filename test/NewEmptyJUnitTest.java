@@ -4,12 +4,16 @@
  */
 
 import br.hub.model.SubscribeBean;
+import br.hub.resource.HubResource;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import org.junit.After;
 import org.junit.AfterClass;
 import org.junit.Before;
 import org.junit.BeforeClass;
 import org.junit.Test;
 import static org.junit.Assert.*;
+import org.push.java.processors.NotifySubscribes;
 
 /**
  *
@@ -17,6 +21,7 @@ import static org.junit.Assert.*;
  */
 public class NewEmptyJUnitTest {
     SubscribeBean sb = new SubscribeBean();
+    HubResource h = new HubResource();
     public NewEmptyJUnitTest() {
         
     }
@@ -46,6 +51,16 @@ public class NewEmptyJUnitTest {
         assertEquals("endereço", sb.getAddress());
         sb.setTopic("tópico");
         assertEquals("tópico", sb.getTopic());
+        
+        h.publicar("chuva", "aqui");
+        h.registrar("chuva");
+        try {
+            h.subscribe(sb);
+        } catch (InterruptedException ex) {
+            Logger.getLogger(NewEmptyJUnitTest.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        h.unsubscribe(sb);
+        
     }
     // TODO add test methods here.
     // The methods must be annotated with annotation @Test. For example:
