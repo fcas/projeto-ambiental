@@ -34,9 +34,12 @@ public class HubResource {
     }
 
     @Resource(name = "subscriberQueue")
-    private static final BlockingQueue<SubscribeBean> subscriberQueue = new LinkedBlockingQueue<SubscribeBean>();
+    public BlockingQueue<SubscribeBean> subscriberQueue = new LinkedBlockingQueue<SubscribeBean>();
 
-    private static final LinkedList<String> topics = new LinkedList<String>();
+    public LinkedList<String> topics = new LinkedList<String>();
+    public boolean subscriberNotificado = false;
+    public boolean containTopic = false;
+    public boolean containSubscribe = false;
     
 
    
@@ -49,6 +52,7 @@ public class HubResource {
         
         if(topics.contains(idTopic)){
         	new NotifySubscribes(subscriberQueue.iterator(), valueTopic, idTopic).notificar();
+                subscriberNotificado = true;
         }
         
     }
@@ -61,6 +65,7 @@ public class HubResource {
     		topics.add(idTopic);
     	}else{
     		System.out.println("Topico com esse id jah foi cadastrado");
+                containTopic = true; 
     	}
     	System.out.println("Topico: " + idTopic + "cadastrado");
     }
@@ -74,6 +79,7 @@ public class HubResource {
 
         if(topics.contains(subscribe.getTopic())){
         	subscriberQueue.add(subscribe);
+                containSubscribe = true;
         }else{
             System.out.println("topico nao existe");
         }
@@ -122,4 +128,36 @@ public class HubResource {
 
     }
 
+    public void publicar(int i, String string) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    public void setSubscriberQueue(BlockingQueue<SubscribeBean> subscriberQueue) {
+        this.subscriberQueue = subscriberQueue;
+    }
+
+    public void setTopics(LinkedList<String> topics) {
+        this.topics = topics;
+    }
+
+    public BlockingQueue<SubscribeBean> getSubscriberQueue() {
+        return subscriberQueue;
+    }
+
+    public LinkedList<String> getTopics() {
+        return topics;
+    }
+
+    public boolean isSubscriberNotificado() {
+        return subscriberNotificado;
+    }
+
+    public boolean isContainTopic() {
+        return containTopic;
+    }
+
+    public boolean isContainSubscribe() {
+        return containSubscribe;
+    }
+   
 }
