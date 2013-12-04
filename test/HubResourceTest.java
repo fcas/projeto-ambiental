@@ -5,6 +5,7 @@
 
 import br.hub.model.SubscribeBean;
 import br.hub.resource.HubResource;
+import java.net.ConnectException;
 import java.util.LinkedList;
 import java.util.concurrent.BlockingQueue;
 import org.junit.After;
@@ -13,6 +14,7 @@ import org.junit.Before;
 import org.junit.BeforeClass;
 import org.junit.Test;
 import static org.junit.Assert.*;
+import org.junit.rules.ExpectedException;
 
 /**
  *
@@ -22,8 +24,8 @@ public class HubResourceTest {
     
     private HubResource hub = new HubResource();
     private LinkedList<String> topics;
-    private BlockingQueue<SubscribeBean> subscribe;
     private SubscribeBean subscribeBean = new SubscribeBean();
+    private BlockingQueue<SubscribeBean> subscriberQueue;
     
     public HubResourceTest() {
     }
@@ -50,7 +52,7 @@ public class HubResourceTest {
     // public void hello() {}
     
     @Test
-    public void testPublicarFail(){
+    public void testPublicarFail() throws ConnectException{
         
         try{
             hub.publicar(" ", " ");
@@ -60,7 +62,7 @@ public class HubResourceTest {
     }
     
     @Test
-    public void testPublicar(){   
+    public void testPublicar() throws ConnectException{   
         topics = hub.getTopics();
         topics.add("001");
         hub.setTopics(topics);
@@ -118,8 +120,19 @@ public class HubResourceTest {
         subscribeBean.setPort(8080);
         assertEquals(8080, subscribeBean.getPort());
         hub.subscribe(subscribeBean);
-        assertTrue(hub.isContainSubscribe());  
-        
+        assertTrue(hub.isContainSubscribe());       
+    }
+    
+    @Test()
+    public void notificar() throws ConnectException{
+        subscriberQueue = hub.getSubscriberQueue();
+        topics = hub.getTopics();
+        topics.add("001");
+        hub.setTopics(topics);
+        subscribeBean.setTopic("001");
+        subscriberQueue.add(subscribeBean);
+        hub.publicar("001", "001");
+        assertTrue(hub.isSubscriberNotificado());
     }
     
 }
