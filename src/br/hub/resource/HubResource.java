@@ -92,7 +92,7 @@ public class HubResource {
     @POST
     @Path("/unsubscribe")
     @Consumes("application/xml")
-    public void unsubscribe(SubscribeBean subscribe) {
+    public void unsubscribe(SubscribeBean subscribe) throws ConnectException {
         System.out.println(subscriberQueue.size() + " Subescritos");
 
         int size = subscriberQueue.size();
