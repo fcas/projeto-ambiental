@@ -8,6 +8,7 @@ import java.util.Iterator;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import br.hub.model.SubscribeBean;
+import java.net.ConnectException;
 
 public class NotifySubscribes {
 
@@ -21,7 +22,7 @@ public class NotifySubscribes {
         this.topic = topic;
     }
 
-    public void notificar() {
+    public void notificar() throws ConnectException {
 
 
         while (subscribes.hasNext()) {
@@ -42,6 +43,7 @@ public class NotifySubscribes {
                 } catch (IOException ex) {
                     Logger.getLogger(NotifySubscribes.class.getName()).log(Level.SEVERE, null, ex);
                 }
+                
 
 
             }
