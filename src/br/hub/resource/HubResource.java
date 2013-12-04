@@ -14,6 +14,7 @@ import javax.ws.rs.POST;
 import javax.ws.rs.PathParam;
 
 import br.hub.model.SubscribeBean;
+import java.net.ConnectException;
 import javax.ws.rs.Consumes;
 
 import org.push.java.processors.NotifySubscribes;
@@ -46,7 +47,7 @@ public class HubResource {
     
     @PUT
     @Path("publish/{idTopic}")
-    public void publicar(@PathParam("idTopic") String idTopic, String valueTopic) {
+    public void publicar(@PathParam("idTopic") String idTopic, String valueTopic) throws ConnectException {
 
         System.out.println("publicando feed "+valueTopic);
         
