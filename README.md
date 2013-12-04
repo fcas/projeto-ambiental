@@ -15,4 +15,4 @@ Build status: Sucess
 |        COVERALLS           |
 ------------------------------
 
-https://coveralls.io/r/fcas/projeto-ambiental-hub
+Coverage: https://coveralls.io/r/fcas/projeto-ambiental-hub
